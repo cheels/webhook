@@ -5,9 +5,10 @@ on:
     types: [trigger-workflow]
 
 jobs:
+  
   build:
+    if: always() && github.ref != 'refs/heads/main'
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
